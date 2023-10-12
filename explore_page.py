@@ -64,28 +64,32 @@ df = load_data()
 def show_explore_page():
     st.title("Explore Software Engineer Salaries")
     
-    st.write(
-        """"
-        ### Stack Overflow Developer Survey 2023
-        """
-        
-    )
+    st.write("Stack Overflow Developer Survey 2023")
+  
+   
     
     data = df ["Country"].value_counts()
     
-    fig1,ax1 = plt.subplots()
-    ax1.pie(data, labels=data.index, autopct="1.1f%%", shadow=True, startangle=90)
+    fig1,ax1 = plt.subplots(figsize=(20,20,))
+    ax1.pie(data, labels=data.index, autopct="%1.1f%%", shadow=True, startangle=90, textprops={'fontsize': 25})
     ax1.axis("equal")
+    
     
     st.write(""" ### Number of Data From different countries""")
     
     st.pyplot(fig1)
+   
     
     st.write(""" ### Main Salary Based On Country""")
     
     data = df.groupby(["Country"])["Salary"].mean().sort_values(ascending=True)
     st.bar_chart(data)
+    
+    
+    st.write(""" ### Main Salary Based On Country""")
+    data = df.groupby(["YearsCode"])["Salary"].mean().sort_values(ascending=True)
     st.line_chart(data)
+    
     
 
     

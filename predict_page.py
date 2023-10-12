@@ -3,6 +3,9 @@ import pickle
 import numpy as np
 import pickle
 
+
+
+
 def load_model():
     with open('saved_steps.pkl', 'rb') as file:
          data = pickle.load(file)
@@ -55,7 +58,7 @@ def show_predict_page():
     country = st.selectbox("Select the country", countries)
     education = st.selectbox("Select the education level", education) 
     
-    experience = st.slider("Years of Experience")
+    experience = st.slider("Years of Experience", 0,40)
      
     yes= st.button("Calculate Salary")
     if yes:

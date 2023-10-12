@@ -86,7 +86,7 @@ def show_explore_page():
     st.bar_chart(data)
     
     
-    st.write(""" ### Main Salary Based On Country""")
+    st.write(""" ### Main Salary Based On Experience""")
     data = df.groupby(["YearsCode"])["Salary"].mean().sort_values(ascending=True)
     st.line_chart(data)
     

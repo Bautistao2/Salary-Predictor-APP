@@ -1,7 +1,6 @@
 ### Salary-Predictor-APP
 
 
-
 ## Description
 
 
